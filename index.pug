@@ -1,0 +1,238 @@
+include mixins
+
+doctype html
+head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width')
+    title Лысиков Артемий - Frontier MWD Systems
+    link(rel='icon' href='icons/icon.png')
+    link(rel='stylesheet' href='css/style.css')
+    link(rel='stylesheet' href='https://unpkg.com/swiper/css/swiper.css')
+header.menu
+    .menu__hamburger
+        .menu__hamburger_line-top
+        .menu__hamburger_line-middle
+        .menu__hamburger_line-bottom
+    img.menu__logo(src='icons/logo.svg' alt='logo')
+    nav.menu__nav
+        .menu__nav_item
+            a.menu__nav_item_link(href='#about-us') About us
+            .menu__nav_item_line
+        .menu__nav_item
+            a.menu__nav_item_link(href='#products') Products &amp; Services
+            .menu__nav_item_line
+        .menu__nav_item
+            a.menu__nav_item_link(href='#') Contacts
+            .menu__nav_item_line
+    .menu__tel-numbers
+        .menu__tel-numbers_item
+            a.menu__tel-numbers_item_link(href='tel:8325591608')
+                | Houston Ph:
+                span.menu__tel-numbers_item_link_number  832-559-1608
+            .menu__tel-numbers_item_line
+        .menu__tel-numbers_item
+            a.menu__tel-numbers_item_link(href='tel:4327891080')
+                | Midland Ph:
+                span.menu__tel-numbers_item_link_number  432-789-1080
+            .menu__tel-numbers_item_line
+
+section.greeting
+    img.greeting__background(src='img/title_image.png' alt='title_image' height='1080' width='1920')
+    .greeting__container
+        .greeting__container_text
+            .greeting__container_text_title
+                h1.greeting__container_text_title_h1
+                    span.greeting__container_text_title_h1_yellow Frontier
+                    |  MWD Systems
+            .greeting__container_text_description
+                | Frontier MWD Systems, a subsidiary of NewTech Services Holding Limited,
+                br
+                |             is one of the fastest growing and most reliable MWD rental and service companies in the US.
+        //.greeting__container_line
+        //    .greeting__container_line_line-1
+        //    .greeting__container_line_line-2
+        //    .greeting__container_line_line-3
+        //    .greeting__container_line_line-4
+    .greeting__circles_circle-1
+    .greeting__circles_circle-2
+    .greeting__circles_circle-3
+    .greeting__circles_circle-4
+
+section#about-us.about-us
+    .about-us__title
+        | About us
+    .about-us__text
+        | Frontier MWD Systems provides customers with the option to rent, lease to own and/or purchase advanced
+        br
+        | MWD/LWD kits backed by an industry-leading commitment to service and support.
+    .about-us__learn
+        a.about-us__learn_link(href='#')
+            | Learn more
+            span.about-us__learn_char &gt;
+
+section#products.products
+    .products__block
+        img.products__block_background(src='img/product_1.png' alt='product-1')
+        h3.products__block_title MWD/LWD Tools
+        .products__block_text-container
+            ul
+                li
+                    a.products__block_text-container_text(href='#')
+                        | Intelligent Pulser Gamma Module (iPGM)
+                        .products__block_text-container_line
+                li
+                    a.products__block_text-container_text(href='#')
+                        | Intelligent Directional Module (IDM)
+                        .products__block_text-container_line
+                li
+                    a.products__block_text-container_text(href='#')
+                        | Guide MWD Surface System
+                        .products__block_text-container_line
+        .products__block_yellow-line
+        .products__block_learn
+            a.products__block_learn_link(href='#')
+                | Learn more
+                span.products__block_learn_char &gt;
+    .products__block
+        img.products__block_background(src='img/product_2.png' alt='product-2')
+        h3.products__block_title Software Products
+        .products__block_yellow-line
+        .products__block_learn
+            a.products__block_learn_link(href='#')
+                | Learn more
+                span.products__block_learn_char &gt;
+    .products__block
+        img.products__block_background(src='img/product_3.png' alt='product-3')
+        h3.products__block_title
+            | Complete MWD
+            br
+            | Kits and Other
+            br
+            | Products
+        .products__block_yellow-line
+        .products__block_learn
+            a.products__block_learn_link(href='#')
+                | Learn more
+                span.products__block_learn_char &gt;
+
+section.holding-promo
+    .holding-promo__container
+        img.holding-promo__container_svg-background(src='img/holding_promo_background.svg' alt='img/holding_promo_background.svg' height='828' width='827')
+        h2.holding-promo__container_title
+            | NewTech Services
+            br
+            | Holding Limited
+        p.holding-promo__container_text
+            | NewTech Services Holding Limited is an international oilfield services company founded in 2009.
+            br
+            | NewTech Services supplies high technology products and services to the oil and gas exploration and production industry.
+        .holding-promo__container_line
+        .holding-promo__container_num-9 9
+        p.holding-promo__container_num-9-text Manufacturing Facilities Worldwide
+        .holding-promo__container_num-12 12
+        p.holding-promo__container_num-12-text Service & Maintenance Centers Worldwide
+        .holding-promo__container_num-27 27
+        p.holding-promo__container_num-27-text Regional Offices Worldwide
+        .holding-promo__container_num-13 13
+        p.holding-promo__container_num-13-text Regional Offices in Russia
+
+section.map
+    img.map__stub(src='img/map_stub.svg' alt='map_stub')
+
+section.news
+    h2.news__title Новости
+    .news__container.swiper-container
+        .swiper-wrapper
+            +news_item('18 апреля 2019',
+                'img/news_1.jpg',
+                'Команда НьюТек Сервисез по мини-футболу ...',
+                '17 марта на крытом футбольном манеже «Олимп» в районе Новокосино состоялся очередной' +
+                ' благотворительный турнир «Кубок Нефть и Газ ...')
+            +news_item('11 марта 2019',
+                'img/news_2.jpg',
+                'В Минусинске успешно выполнены ...',
+                'В апреле текущего года по договору между компаниями «НьюТек Сервисез» и «ГЕОТЕК Сейсморазведка»,' +
+                ' одной из крупнейших в мире ...')
+            +news_item('8 марта 2019',
+                'img/news_3.jpg',
+                'НьюТек Сервисез запустило один из первых заводов ...',
+                'В апреле в Перми НьюТек Сервисез запустило один из первых заводов в России по производству' +
+                ' набухающих пакеров ...')
+        .swiper-pagination
+        .swiper-button-prev
+        .swiper-button-next
+
+section.more-info
+    form.more-info__form(name="more-info_form" onsubmit="return validateForm()" method="post")
+        h2.more-info__form_title Request More Information
+        .more-info__form_block
+            input.more-info__form_block_name(type="text" placeholder="Full name" name="full_name")
+            .more-info__form_block_error_name-unfilled This field is required
+            .more-info__form_block_error_name-incorrect This field entered incorrectly
+        .more-info__form_block
+            .more-info__form_block_left-item
+                input.more-info__form_block_company(type="text" placeholder="Company" name="company")
+            .more-info__form_block_right-item
+                input.more-info__form_block_business-segment(type="text" placeholder="Business Segment" name="business_segment")
+        .more-info__form_block
+            .more-info__form_block_left-item
+                input.more-info__form_block_email(type="text" placeholder="Email" name="email")
+                .more-info__form_block_error_email-unfilled This field is required
+                .more-info__form_block_error_email-incorrect This field entered incorrectly
+            .more-info__form_block_right-item
+                input.more-info__form_block_tel-number(type="text" placeholder="Phone Number" name="tel_number")
+                .more-info__form_block_error_tel-number-unfilled This field is required
+                .more-info__form_block_error_tel-number-incorrect This field entered incorrectly
+        .more-info__form_block
+            input.more-info__form_block_comment(type="text" placeholder="Comment" name="comment")
+        .more-info__form_submit
+            .more-info__form_submit_personal-data
+                .more-info__form_submit_personal-data_container
+                    input.more-info__form_submit_personal-data_container_check_input(type="checkbox" name="submit_data")
+                    img.more-info__form_submit_personal-data_container_check_path(src='icons/path.svg')
+                    .more-info__form_submit_personal-data_container_check_box
+                    label.more-info__form_submit_personal-data_container_text I give consent for my personal data to be processed
+            .more-info__form_submit_button-container
+                input.more-info__form_submit_button-container_button(type="submit" value="SEND")
+
+footer.footer
+    h1.footer__title Effective Advanced
+        h1.footer__title_yellow Technologies
+    .footer__item-container
+        address.footer__item-container_address
+            h4.footer__item-container_address_title Houstion
+            p.footer__item-container_address_text
+                br
+                | 22955 State Hwy. 249, Suite 33
+                br
+                | Tomball, Texas 77375
+                br
+                br
+                | Ph: 832.559.1608
+                br
+                | Fax: 832.559.1610
+        address.footer__item-container_address
+            h4.footer__item-container_address_title Midland
+            p.footer__item-container_address_text
+                br
+                | 206W. New Jersey Ave.
+                br
+                | Midland, TX 79701
+                br
+                br
+                | Ph: 432.789.1080
+        nav.footer__item-container_navigation
+            .footer__item-container_navigation_line
+            .footer__item-container_navigation_links
+                a.footer__item-container_navigation_links_link(href='#') компания
+                a.footer__item-container_navigation_links_link(href='#') продукты и услуги
+                a.footer__item-container_navigation_links_link(href='#') пресс центр
+                a.footer__item-container_navigation_links_link(href='#') контакты
+    p.footer__copyright © Frontier MWD Systems LLC. 2019
+    p.footer__design-by Design by
+        a.footer__design-by_only(href="https://onlydigital.ru/")  Only.
+
+script(type='text/javascript' src='https://unpkg.com/swiper/js/swiper.js')
+script(type='text/javascript' src='scripts/swiper_init.js')
+script(type='text/javascript' src='scripts/smooth_scrolling.js')
+script(type='text/javascript' src='scripts/form_verification.js')
