@@ -55,11 +55,17 @@ function validateString(string, elementName, verifyType) {
 
 function verifyFullName(string) {
     string = String(string);
+    if (string.length < 2){
+        return false;
+    }
     return verifyForValidCharacters(string.toLowerCase(), ruABC + enABC + '-' + ' ');
 }
 
 function verifyEmail(string) {
     string = String(string);
+    if (string.length < 5){
+        return false;
+    }
     let stringStartEnd = string.charAt(0) + string.charAt(string.length - 1);
     if (verifyForValidCharacters(stringStartEnd, enABC + nums)) {
         string = string.substring(1, string.length - 1);
@@ -80,10 +86,13 @@ function verifyEmail(string) {
 
 function verifyTelNumber(string) {
     string = String(string);
+    if(string.length < 11) {
+        return false;
+    }
     if (verifyForValidCharacters(string.charAt(0), nums + "+")) {
         return verifyForValidCharacters(string.substring(1).toLowerCase(), nums);
     } else {
-        return false
+        return false;
     }
 }
 

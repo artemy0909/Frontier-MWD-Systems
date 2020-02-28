@@ -1,8 +1,6 @@
-$yellow_elements: #FFCB05;
-$menu_hamburger_box_color: #5C6266;
-$header_font_color: white;
-$error_color: #FF0000;
-
+@import 'colors';
+@import 'fonts';
+@import 'mixins';
 
 * {
   --swiper-theme-color: #FFCB05;
@@ -14,42 +12,6 @@ $error_color: #FF0000;
   box-sizing: border-box;
   text-decoration: none;
 }
-
-@font-face {
-  font-family: 'Open Sans';
-  src: url('/fonts/OpenSans-Bold.eot');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  src: url('/fonts/OpenSans-Regular.eot');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'TT Firs Neue';
-  src: url('/fonts/TTFirsNeue-Bold.eot');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Mont';
-  src: url('/fonts/Mont-Bold.eot');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Mont';
-  src: url('/fonts/Mont-Regular.eot');
-  font-weight: normal;
-  font-style: normal;
-}
-
 
 @keyframes header_animation {
   0% {
@@ -105,135 +67,11 @@ $error_color: #FF0000;
   }
 }
 
-@mixin hamburger_lines {
-  position: relative;
-  height: 0.1875rem;
-  width: 1.25rem;
-  margin-right: 0;
-  padding: 0;
-  background-color: white;
-}
-
-@mixin menu_line {
-  margin-left: auto;
-  margin-right: auto;
-  width: 0;
-  height: 0.1875rem;
-  background: $yellow_elements;
-  transition: width 1s;
-}
-
-@mixin menu_item {
-  height: 5rem;
-  width: auto;
-}
-
-@mixin menu_link {
-  display: block;
-  margin: 1.875rem;
-  font-weight: bold;
-  font-size: 0.75rem;
-  height: 1.0625rem;
-  color: $header_font_color;
-}
-
-@mixin circle_style {
-  opacity: 0;
-  border: 1px solid $yellow_elements;
-  position: absolute;
-  border-radius: 100%;
-}
-
-@mixin line_container_white_lines {
-  width: 2.5rem;
-  height: 0.125rem;
-  margin-top: 1.25rem;
-  margin-left: 2.5rem;
-  background: white;
-}
-
-@mixin holding_promo_nums {
-  font-family: 'TT Firs Neue', sans-serif;
-  font-weight: bold;
-  font-style: normal;
-}
-
-%input_error_style {
-  position: absolute;
-  top: 3rem;
-  visibility: hidden;
-  font-size: 0.75rem;
-  line-height: 1.625rem;
-  opacity: 0;
-  color: $error_color;
-  transition: opacity 0.5s, visibility 0s 1s;
-}
-
 html {
   font-size: 16px;
 }
 
-
-@media screen and (max-width: 1900px) {
-  html {
-    font-size: 95%;
-  }
-}
-
-@media screen and (max-width: 1800px) {
-  html {
-    font-size: 90%;
-  }
-}
-
-@media screen and (max-width: 1700px) {
-  html {
-    font-size: 85%;
-  }
-}
-
-@media screen and (max-width: 1600px) {
-  html {
-    font-size: 80%;
-  }
-}
-
-@media screen and (max-width: 1500px) {
-  html {
-    font-size: 75%;
-  }
-}
-
-@media screen and (max-width: 1400px) {
-  html {
-    font-size: 70%;
-  }
-}
-
-@media screen and (max-width: 1300px) {
-  html {
-    font-size: 65%;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  html {
-    font-size: 60%;
-  }
-}
-
-@media screen and (max-width: 1100px) {
-  html {
-    font-size: 55%;
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  html {
-    font-size: 50%;
-  }
-}
-
+@import 'media';
 
 section, header, footer {
   overflow: hidden;
@@ -519,23 +357,16 @@ section, header, footer {
 
   &__learn {
     position: absolute;
-    width: 6.75rem;
-    height: 0.9375rem;
     left: 20rem;
     top: 22.8125rem;
 
     &_link {
-      font-weight: bold;
-      font-size: 0.75rem;
-      line-height: 1rem;
-      text-transform: uppercase;
+      @extend %learn_link;
       color: black;
-      text-decoration: none;
     }
 
     &_char {
-      font-weight: bold;
-      padding-left: 0.9375rem;
+      @extend %learn_char;
     }
   }
 
@@ -631,6 +462,14 @@ section, header, footer {
       transform: translateX(-100%);
       opacity: 0;
       transition: opacity 1s, transform 1s;
+      &_link {
+        @extend %learn_link;
+        color: white;
+
+      }
+      &_char {
+        @extend %learn_char;
+      }
     }
 
     &:hover &_learn {
@@ -638,19 +477,6 @@ section, header, footer {
       opacity: 1;
     }
 
-    &_learn_link {
-      font-weight: bold;
-      font-size: 0.75rem;
-      line-height: 1.0rem;
-      text-transform: uppercase;
-      color: white;
-      text-decoration: none;
-    }
-
-    &_learn_char {
-      font-weight: bold;
-      padding-left: 0.9375rem;
-    }
   }
 }
 
@@ -762,11 +588,107 @@ section, header, footer {
 .map {
   position: relative;
   height: 48.75rem;
+  color: white;
 
-  &__stub {
-    height: 100%;
+  &__navigation{
+    z-index: 3;
+    position: absolute;
+    top: 4.375rem;
+    left: 60rem;
+    &_world{
+      font-size: 1rem;
+      line-height: 160%;
+      font-weight: bold;
+      margin-right: 3.5rem;
+      opacity: 1;
+      transition: opacity 1s;
+      cursor: pointer;
+      &_animation{
+        opacity: 0.5;
+      }
+    }
+    &_russia{
+      font-size: 1rem;
+      line-height: 160%;
+      font-weight: bold;
+      opacity: 0.5;
+      transition: opacity 1s;
+      cursor: pointer;
+      &_animation{
+        opacity: 1;
+      }
+    }
+    &_line{
+      height: 2px;
+      background-color: white;
+      width: 3.125rem;
+      transition: margin-left 1s;
+      &_animation{
+        margin-left: 6.5rem;
+      }
+    }
+  }
+
+  &__black-layer{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    background-color: black;
+    opacity: 0.8;
     width: 100%;
-    object-fit: cover;
+    height: 100%;
+  }
+
+  &__title{
+    position: absolute;
+    z-index: 3;
+    top: 18rem;
+    left: 20rem;
+    font-size: 2.8125rem;
+    font-weight: bold;
+    &_yellow{
+      font-weight: bold;
+      color: $yellow_elements;
+    }
+  }
+
+  &__learn {
+    z-index: 3;
+    position: absolute;
+    left: 20rem;
+    top: 28.75rem;
+
+    &_link {
+      @extend %learn_link;
+      color: white;
+    }
+
+    &_char {
+      @extend %learn_char;
+    }
+  }
+  &__info{
+    z-index: 3;
+    position: absolute;
+    top: 18rem;
+    left: 60rem;
+    display: flex;
+    &_line{
+      width: 2px;
+      background-color: $yellow_elements;
+    }
+    &_text{
+      font-size: 1rem;
+      line-height: 217.89%;
+      padding-bottom: 2rem;
+      padding-left: 5rem;
+      &_title{
+        font-weight: bold;
+        font-size: 1.5rem;
+        padding-bottom: 2rem;
+      }
+    }
   }
 }
 
@@ -793,6 +715,7 @@ section, header, footer {
     position: absolute;
     top: 20.5rem;
     height: 45rem;
+    cursor: grab;
     &_item {
       &_date {
         font-size: 0.875rem;
@@ -1081,7 +1004,6 @@ input[type=submit] {
 
       &_line {
         width: 2px;
-        height: 13.125rem;
         background: white;
       }
 
@@ -1128,4 +1050,8 @@ input[type=submit] {
     }
   }
 
+}
+
+[class*="ymaps-2"][class*="-ground-pane"] {
+  -webkit-filter: grayscale(100%);
 }

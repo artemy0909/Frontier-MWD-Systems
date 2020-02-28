@@ -1,3 +1,5 @@
+"use strict";
+
 window.onload = () => {
     addClassToElement("greeting__circles_circle-4", "greeting__circles_circle-4_animation");
     addClassToElement("greeting__circles_circle-3", "greeting__circles_circle-3_animation");

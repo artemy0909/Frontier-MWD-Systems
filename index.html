@@ -6,17 +6,16 @@
   <link rel="icon" href="icons/icon.png">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
-  <script src="https://api-maps.yandex.ru/2.1/?apikey=2946900a-a1c0-45dd-b689-ba9d5c725cde&amp;lang=ru_RU"
-          type="text/javascript"></script>
-  <script src="scripts/yandex_maps.js"></script>
+  <script type="text/javascript" src="https://api-maps.yandex.ru/2.1/?apikey=2946900a-a1c0-45dd-b689-ba9d5c725cde&amp;lang=en_US"></script>
+  <script type="text/javascript" src="scripts/yandex_maps.js"></script>
+  <script type="text/javascript" src="scripts/form_verification.js"></script>
 </head>
 <header class="menu">
   <div class="menu__hamburger">
     <div class="menu__hamburger_line-top"></div>
     <div class="menu__hamburger_line-middle"></div>
     <div class="menu__hamburger_line-bottom"></div>
-  </div>
-  <img class="menu__logo" src="icons/logo.svg" alt="logo">
+  </div><img class="menu__logo" src="icons/logo.svg" alt="logo">
   <nav class="menu__nav">
     <div class="menu__nav_item"><a class="menu__nav_item_link" href="#about-us">About us</a>
       <div class="menu__nav_item_line"></div>
@@ -105,7 +104,15 @@
 </section>
 <section class="map">
   <div id="YMapsID"></div>
-  <!--img.map__stub(src='img/map_stub.svg' alt='map_stub')-->
+  <div class="map__black-layer"></div>
+  <div class="map__navigation"><span class="map__navigation_world" id="world_button">World</span><span class="map__navigation_russia" id="russia_button">Russia</span>
+    <div class="map__navigation_line"></div>
+  </div>
+  <h2 class="map__title">International<br><span class="map__title_yellow">sales</span></h2>
+  <div class="map__learn"><a class="map__learn_link" href="#">Learn more<span class="map__learn_char">&gt;</span></a></div>
+  <div class="map__info">
+    <div class="map__info_line"></div><a class="map__info_text"><span class="map__info_text_title">Need Help with Shipping?</span><br>We offer several logistics options for international<br>shipping, and can help make sure that your kit arrives in<br>the right place at the right time.</a>
+  </div>
 </section>
 <section class="news">
   <h2 class="news__title">Новости</h2>
@@ -114,67 +121,53 @@
       <div class="swiper-slide news__container_item">
         <p class="news__container_item_date">18 апреля 2019</p>
         <div class="news__container_item_title">
-          <div class="news__container_item_title_black-layer"></div>
-          <img class="news__container_item_title_img" src="img/news_1.jpg" alt="news_img"/>
+          <div class="news__container_item_title_black-layer"></div><img class="news__container_item_title_img" src="img/news_1.jpg" alt="news_img"/>
           <h2 class="news__container_item_title_text">Команда НьюТек Сервисез по мини-футболу ...</h2>
         </div>
-        <p class="news__container_item_description">17 марта на крытом футбольном манеже «Олимп» в районе Новокосино
-          состоялся очередной благотворительный турнир «Кубок Нефть и Газ ...</p>
+        <p class="news__container_item_description">17 марта на крытом футбольном манеже «Олимп» в районе Новокосино состоялся очередной благотворительный турнир «Кубок Нефть и Газ ...</p>
       </div>
       <div class="swiper-slide news__container_item">
         <p class="news__container_item_date">11 марта 2019</p>
         <div class="news__container_item_title">
-          <div class="news__container_item_title_black-layer"></div>
-          <img class="news__container_item_title_img" src="img/news_2.jpg" alt="news_img"/>
+          <div class="news__container_item_title_black-layer"></div><img class="news__container_item_title_img" src="img/news_2.jpg" alt="news_img"/>
           <h2 class="news__container_item_title_text">В Минусинске успешно выполнены ...</h2>
         </div>
-        <p class="news__container_item_description">В апреле текущего года по договору между компаниями «НьюТек
-          Сервисез» и «ГЕОТЕК Сейсморазведка», одной из крупнейших в мире ...</p>
+        <p class="news__container_item_description">В апреле текущего года по договору между компаниями «НьюТек Сервисез» и «ГЕОТЕК Сейсморазведка», одной из крупнейших в мире ...</p>
       </div>
       <div class="swiper-slide news__container_item">
         <p class="news__container_item_date">8 марта 2019</p>
         <div class="news__container_item_title">
-          <div class="news__container_item_title_black-layer"></div>
-          <img class="news__container_item_title_img" src="img/news_3.jpg" alt="news_img"/>
+          <div class="news__container_item_title_black-layer"></div><img class="news__container_item_title_img" src="img/news_3.jpg" alt="news_img"/>
           <h2 class="news__container_item_title_text">НьюТек Сервисез запустило один из первых заводов ...</h2>
         </div>
-        <p class="news__container_item_description">В апреле в Перми НьюТек Сервисез запустило один из первых заводов в
-          России по производству набухающих пакеров ...</p>
+        <p class="news__container_item_description">В апреле в Перми НьюТек Сервисез запустило один из первых заводов в России по производству набухающих пакеров ...</p>
       </div>
       <div class="swiper-slide news__container_item">
         <p class="news__container_item_date">18 апреля 2019</p>
         <div class="news__container_item_title">
-          <div class="news__container_item_title_black-layer"></div>
-          <img class="news__container_item_title_img" src="img/news_1.jpg" alt="news_img"/>
+          <div class="news__container_item_title_black-layer"></div><img class="news__container_item_title_img" src="img/news_1.jpg" alt="news_img"/>
           <h2 class="news__container_item_title_text">Команда НьюТек Сервисез по мини-футболу ...</h2>
         </div>
-        <p class="news__container_item_description">17 марта на крытом футбольном манеже «Олимп» в районе Новокосино
-          состоялся очередной благотворительный турнир «Кубок Нефть и Газ ...</p>
+        <p class="news__container_item_description">17 марта на крытом футбольном манеже «Олимп» в районе Новокосино состоялся очередной благотворительный турнир «Кубок Нефть и Газ ...</p>
       </div>
       <div class="swiper-slide news__container_item">
         <p class="news__container_item_date">11 марта 2019</p>
         <div class="news__container_item_title">
-          <div class="news__container_item_title_black-layer"></div>
-          <img class="news__container_item_title_img" src="img/news_2.jpg" alt="news_img"/>
+          <div class="news__container_item_title_black-layer"></div><img class="news__container_item_title_img" src="img/news_2.jpg" alt="news_img"/>
           <h2 class="news__container_item_title_text">В Минусинске успешно выполнены ...</h2>
         </div>
-        <p class="news__container_item_description">В апреле текущего года по договору между компаниями «НьюТек
-          Сервисез» и «ГЕОТЕК Сейсморазведка», одной из крупнейших в мире ...</p>
+        <p class="news__container_item_description">В апреле текущего года по договору между компаниями «НьюТек Сервисез» и «ГЕОТЕК Сейсморазведка», одной из крупнейших в мире ...</p>
       </div>
       <div class="swiper-slide news__container_item">
         <p class="news__container_item_date">8 марта 2019</p>
         <div class="news__container_item_title">
-          <div class="news__container_item_title_black-layer"></div>
-          <img class="news__container_item_title_img" src="img/news_3.jpg" alt="news_img"/>
+          <div class="news__container_item_title_black-layer"></div><img class="news__container_item_title_img" src="img/news_3.jpg" alt="news_img"/>
           <h2 class="news__container_item_title_text">НьюТек Сервисез запустило один из первых заводов ...</h2>
         </div>
-        <p class="news__container_item_description">В апреле в Перми НьюТек Сервисез запустило один из первых заводов в
-          России по производству набухающих пакеров ...</p>
+        <p class="news__container_item_description">В апреле в Перми НьюТек Сервисез запустило один из первых заводов в России по производству набухающих пакеров ...</p>
       </div>
     </div>
     <div class="swiper-pagination"></div>
-    <!--.swiper-button-prev-->
-    <!--.swiper-button-next-->
   </div>
 </section>
 <section class="more-info">
@@ -190,8 +183,7 @@
         <input class="more-info__form_block_company" type="text" placeholder="Company" name="company">
       </div>
       <div class="more-info__form_block_right-item">
-        <input class="more-info__form_block_business-segment" type="text" placeholder="Business Segment"
-               name="business_segment">
+        <input class="more-info__form_block_business-segment" type="text" placeholder="Business Segment" name="business_segment">
       </div>
     </div>
     <div class="more-info__form_block">
@@ -212,12 +204,9 @@
     <div class="more-info__form_submit">
       <div class="more-info__form_submit_personal-data">
         <div class="more-info__form_submit_personal-data_container">
-          <input class="more-info__form_submit_personal-data_container_check_input" type="checkbox"
-                 name="submit_data"><img class="more-info__form_submit_personal-data_container_check_path"
-                                         src="icons/path.svg">
+          <input class="more-info__form_submit_personal-data_container_check_input" type="checkbox" name="submit_data"><img class="more-info__form_submit_personal-data_container_check_path" src="icons/path.svg">
           <div class="more-info__form_submit_personal-data_container_check_box"></div>
-          <label class="more-info__form_submit_personal-data_container_text">I give consent for my personal data to be
-            processed</label>
+          <label class="more-info__form_submit_personal-data_container_text">I give consent for my personal data to be processed</label>
         </div>
       </div>
       <div class="more-info__form_submit_button-container">
@@ -237,16 +226,11 @@
     </address>
     <address class="footer__item-container_address">
       <h4 class="footer__item-container_address_title">Midland</h4>
-      <p class="footer__item-container_address_text"><br>206W. New Jersey Ave.<br>Midland, TX 79701<br><br>Ph:
-        432.789.1080</p>
+      <p class="footer__item-container_address_text"><br>206W. New Jersey Ave.<br>Midland, TX 79701<br><br>Ph: 432.789.1080</p>
     </address>
     <nav class="footer__item-container_navigation">
       <div class="footer__item-container_navigation_line"></div>
-      <div class="footer__item-container_navigation_links"><a class="footer__item-container_navigation_links_link"
-                                                              href="#">компания</a><a
-              class="footer__item-container_navigation_links_link" href="#">продукты и услуги</a><a
-              class="footer__item-container_navigation_links_link" href="#">пресс центр</a><a
-              class="footer__item-container_navigation_links_link" href="#">контакты</a></div>
+      <div class="footer__item-container_navigation_links"><a class="footer__item-container_navigation_links_link" href="#">компания</a><a class="footer__item-container_navigation_links_link" href="#">продукты и услуги</a><a class="footer__item-container_navigation_links_link" href="#">пресс центр</a><a class="footer__item-container_navigation_links_link" href="#">контакты</a></div>
     </nav>
   </div>
   <p class="footer__copyright">© Frontier MWD Systems LLC. 2019</p>
@@ -256,4 +240,3 @@
 <script type="text/javascript" src="https://unpkg.com/swiper/js/swiper.js"></script>
 <script type="text/javascript" src="scripts/swiper_init.js"></script>
 <script type="text/javascript" src="scripts/smooth_scrolling.js"></script>
-<script type="text/javascript" src="scripts/form_verification.js"></script>

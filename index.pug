@@ -8,8 +8,10 @@ head
     link(rel='icon' href='icons/icon.png')
     link(rel='stylesheet' href='css/style.css')
     link(rel='stylesheet' href='https://unpkg.com/swiper/css/swiper.css')
-    script(src="https://api-maps.yandex.ru/2.1/?apikey=2946900a-a1c0-45dd-b689-ba9d5c725cde&lang=ru_RU" type="text/javascript")
-    script(src="scripts/yandex_maps.js")
+    script(type='text/javascript' src="https://api-maps.yandex.ru/2.1/?apikey=2946900a-a1c0-45dd-b689-ba9d5c725cde&lang=en_US")
+    script(type='text/javascript' src="scripts/yandex_maps.js")
+    script(type='text/javascript' src='scripts/form_verification.js')
+
 header.menu
     .menu__hamburger
         .menu__hamburger_line-top
@@ -67,11 +69,7 @@ section#about-us.about-us
         | Frontier MWD Systems provides customers with the option to rent, lease to own and/or purchase advanced
         br
         | MWD/LWD kits backed by an industry-leading commitment to service and support.
-    .about-us__learn
-        a.about-us__learn_link(href='#')
-            | Learn more
-            span.about-us__learn_char &gt;
-
+    +learn(class='about-us__')
 section#products.products
     .products__block
         img.products__block_background(src='img/product_1.png' alt='product-1')
@@ -91,18 +89,12 @@ section#products.products
                         | Guide MWD Surface System
                         .products__block_text-container_line
         .products__block_yellow-line
-        .products__block_learn
-            a.products__block_learn_link(href='#')
-                | Learn more
-                span.products__block_learn_char &gt;
+        +learn(class='products__block_')
     .products__block
         img.products__block_background(src='img/product_2.png' alt='product-2')
         h3.products__block_title Software Products
         .products__block_yellow-line
-        .products__block_learn
-            a.products__block_learn_link(href='#')
-                | Learn more
-                span.products__block_learn_char &gt;
+        +learn(class='products__block_')
     .products__block
         img.products__block_background(src='img/product_3.png' alt='product-3')
         h3.products__block_title
@@ -112,10 +104,7 @@ section#products.products
             br
             | Products
         .products__block_yellow-line
-        .products__block_learn
-            a.products__block_learn_link(href='#')
-                | Learn more
-                span.products__block_learn_char &gt;
+        +learn(class='products__block_')
 
 section.holding-promo
     .holding-promo__container
@@ -140,7 +129,26 @@ section.holding-promo
 
 section.map
     div#YMapsID
-    //img.map__stub(src='img/map_stub.svg' alt='map_stub')
+    .map__black-layer
+    .map__navigation
+        span.map__navigation_world#world_button World
+        span.map__navigation_russia#russia_button Russia
+        .map__navigation_line
+    h2.map__title
+        |International
+        br
+        span.map__title_yellow sales
+    +learn(class='map__')
+    .map__info
+        .map__info_line
+        a.map__info_text
+            span.map__info_text_title Need Help with Shipping?
+            br
+            | We offer several logistics options for international
+            br
+            | shipping, and can help make sure that your kit arrives in
+            br
+            | the right place at the right time.
 
 section.news
     h2.news__title Новости
@@ -177,8 +185,6 @@ section.news
                 'В апреле в Перми НьюТек Сервисез запустило один из первых заводов в России по производству' +
                 ' набухающих пакеров ...')
         .swiper-pagination
-        //.swiper-button-prev
-        //.swiper-button-next
 
 section.more-info
     form.more-info__form(name="more-info_form" onsubmit="return validateForm()" method="post")
@@ -254,4 +260,3 @@ script(type='text/javascript' src= 'scripts/start_animations.js')
 script(type='text/javascript' src='https://unpkg.com/swiper/js/swiper.js')
 script(type='text/javascript' src='scripts/swiper_init.js')
 script(type='text/javascript' src='scripts/smooth_scrolling.js')
-script(type='text/javascript' src='scripts/form_verification.js')

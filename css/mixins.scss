@@ -1,0 +1,76 @@
+@mixin menu_line {
+  margin-left: auto;
+  margin-right: auto;
+  width: 0;
+  height: 0.1875rem;
+  background: $yellow_elements;
+  transition: width 1s;
+}
+
+@mixin menu_item {
+  height: 5rem;
+  width: auto;
+}
+
+@mixin menu_link {
+  display: block;
+  margin: 1.875rem;
+  font-weight: bold;
+  font-size: 0.75rem;
+  height: 1.0625rem;
+  color: $header_font_color;
+}
+
+@mixin circle_style {
+  opacity: 0;
+  border: 1px solid $yellow_elements;
+  position: absolute;
+  border-radius: 100%;
+}
+
+@mixin line_container_white_lines {
+  width: 2.5rem;
+  height: 0.125rem;
+  margin-top: 1.25rem;
+  margin-left: 2.5rem;
+  background: white;
+}
+
+@mixin holding_promo_nums {
+  font-family: 'TT Firs Neue', sans-serif;
+  font-weight: bold;
+  font-style: normal;
+}
+
+@mixin hamburger_lines {
+  position: relative;
+  height: 0.1875rem;
+  width: 1.25rem;
+  margin-right: 0;
+  padding: 0;
+  background-color: white;
+}
+
+%input_error_style {
+  position: absolute;
+  top: 3rem;
+  visibility: hidden;
+  font-size: 0.75rem;
+  line-height: 1.625rem;
+  opacity: 0;
+  color: $error_color;
+  transition: opacity 0.5s, visibility 0s 1s;
+}
+
+%learn_link {
+  font-weight: bold;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+%learn_char {
+  font-weight: bold;
+  padding-left: 0.9375rem;
+}
