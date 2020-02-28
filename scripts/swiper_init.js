@@ -2,14 +2,9 @@
 
 var mySwiper = new Swiper('.swiper-container', {
     direction: 'horizontal',
-    loop: true,
-
+    slidesPerView: 3,
+    slidesOffsetBefore: 100,
     pagination: {
         el: '.swiper-pagination',
-    },
-
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
     },
 });

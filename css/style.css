@@ -167,7 +167,7 @@ section, header, footer {
   opacity: 0;
 }
 .menu_animation {
-  animation: 2000ms header_animation 1500ms;
+  animation: 2000ms header_animation 1000ms;
   animation-fill-mode: forwards;
 }
 .menu__hamburger {
@@ -279,7 +279,7 @@ section, header, footer {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  opacity: 0.5;
+  opacity: 0.4;
   animation: background-tinting 4s;
 }
 .greeting__container {
@@ -317,7 +317,7 @@ section, header, footer {
   color: #FFFFFF;
 }
 .greeting__container_text_description_animation {
-  animation: 2000ms title_text_flowing 2500ms;
+  animation: 2000ms title_text_flowing 2000ms;
   animation-fill-mode: forwards;
 }
 .greeting__container_line {
@@ -685,14 +685,7 @@ section, header, footer {
 .news__container {
   position: absolute;
   top: 20.5rem;
-  width: 80rem;
   height: 45rem;
-}
-.news__container_item {
-  text-align: left;
-  width: 35rem;
-  margin-left: auto;
-  margin-right: auto;
 }
 .news__container_item_date {
   font-size: 0.875rem;

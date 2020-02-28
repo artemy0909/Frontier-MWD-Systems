@@ -1,9 +1,8 @@
 mixin news_item (text_date, img_src, title_text, description)
-    .swiper-slide
-        .news__container_item
-            p.news__container_item_date=text_date
-            .news__container_item_title
-                .news__container_item_title_black-layer
-                img.news__container_item_title_img(src=img_src alt='news_img')
-                h2.news__container_item_title_text=title_text
-            p.news__container_item_description=description
+    .swiper-slide.news__container_item
+        p.news__container_item_date=text_date
+        .news__container_item_title
+            .news__container_item_title_black-layer
+            img.news__container_item_title_img(src=img_src alt='news_img')
+            h2.news__container_item_title_text=title_text
+        p.news__container_item_description=description

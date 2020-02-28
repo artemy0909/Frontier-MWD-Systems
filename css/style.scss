@@ -249,7 +249,7 @@ section, header, footer {
   opacity: 0;
 
   &_animation {
-    animation: 2000ms header_animation 1500ms;
+    animation: 2000ms header_animation 1000ms;
     animation-fill-mode: forwards;
   }
 
@@ -349,7 +349,7 @@ section, header, footer {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    opacity: 0.5;
+    opacity: 0.4;
     animation: background-tinting 4s;
   }
 
@@ -392,7 +392,7 @@ section, header, footer {
         color: #FFFFFF;
 
         &_animation {
-          animation: 2000ms title_text_flowing 2500ms;
+          animation: 2000ms title_text_flowing 2000ms;
           animation-fill-mode: forwards;
         }
       }
@@ -792,15 +792,8 @@ section, header, footer {
   &__container {
     position: absolute;
     top: 20.5rem;
-    width: 80rem;
     height: 45rem;
-
     &_item {
-      text-align: left;
-      width: 35rem;
-      margin-left: auto;
-      margin-right: auto;
-
       &_date {
         font-size: 0.875rem;
         font-weight: bold;
@@ -849,7 +842,6 @@ section, header, footer {
 
   }
 }
-
 
 .more-info {
   position: relative;
