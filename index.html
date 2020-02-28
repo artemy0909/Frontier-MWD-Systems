@@ -6,13 +6,17 @@
   <link rel="icon" href="icons/icon.png">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=2946900a-a1c0-45dd-b689-ba9d5c725cde&amp;lang=ru_RU"
+          type="text/javascript"></script>
+  <script src="scripts/yandex_maps.js"></script>
 </head>
 <header class="menu">
   <div class="menu__hamburger">
     <div class="menu__hamburger_line-top"></div>
     <div class="menu__hamburger_line-middle"></div>
     <div class="menu__hamburger_line-bottom"></div>
-  </div><img class="menu__logo" src="icons/logo.svg" alt="logo">
+  </div>
+  <img class="menu__logo" src="icons/logo.svg" alt="logo">
   <nav class="menu__nav">
     <div class="menu__nav_item"><a class="menu__nav_item_link" href="#about-us">About us</a>
       <div class="menu__nav_item_line"></div>
@@ -99,7 +103,10 @@
     <p class="holding-promo__container_num-13-text">Regional Offices in Russia</p>
   </div>
 </section>
-<section class="map"><img class="map__stub" src="img/map_stub.svg" alt="map_stub"></section>
+<section class="map">
+  <div id="YMapsID"></div>
+  <!--img.map__stub(src='img/map_stub.svg' alt='map_stub')-->
+</section>
 <section class="news">
   <h2 class="news__title">Новости</h2>
   <div class="news__container swiper-container">
@@ -108,7 +115,8 @@
         <div class="news__container_item">
           <p class="news__container_item_date">18 апреля 2019</p>
           <div class="news__container_item_title">
-            <div class="news__container_item_title_black-layer"></div><img class="news__container_item_title_img" src="img/news_1.jpg" alt="news_img"/>
+            <div class="news__container_item_title_black-layer"></div>
+            <img class="news__container_item_title_img" src="img/news_1.jpg" alt="news_img"/>
             <h2 class="news__container_item_title_text">Команда НьюТек Сервисез по мини-футболу ...</h2>
           </div>
           <p class="news__container_item_description">17 марта на крытом футбольном манеже «Олимп» в районе Новокосино состоялся очередной благотворительный турнир «Кубок Нефть и Газ ...</p>
@@ -144,44 +152,44 @@
   <form class="more-info__form" method="post" name="more-info_form" onsubmit="return validateForm()">
     <h2 class="more-info__form_title">Request More Information</h2>
     <div class="more-info__form_block">
-        <input class="more-info__form_block_name" name="full_name" placeholder="Full name" type="text">
-        <div class="more-info__form_block_error_name-unfilled">This field is required</div>
-        <div class="more-info__form_block_error_name-incorrect">This field entered incorrectly</div>
+      <input class="more-info__form_block_name" name="full_name" placeholder="Full name" type="text">
+      <div class="more-info__form_block_error_name-unfilled">This field is required</div>
+      <div class="more-info__form_block_error_name-incorrect">This field typed incorrectly</div>
     </div>
     <div class="more-info__form_block">
       <div class="more-info__form_block_left-item">
         <input class="more-info__form_block_company" name="company" placeholder="Company" type="text">
       </div>
       <div class="more-info__form_block_right-item">
-          <input class="more-info__form_block_business-segment" name="business_segment" placeholder="Business Segment"
-                 type="text">
+        <input class="more-info__form_block_business-segment" name="business_segment" placeholder="Business Segment"
+               type="text">
       </div>
     </div>
     <div class="more-info__form_block">
-        <div class="more-info__form_block_left-item">
-            <input class="more-info__form_block_email" name="email" placeholder="Email" type="text">
-            <div class="more-info__form_block_error_email-unfilled">This field is required</div>
-            <div class="more-info__form_block_error_email-incorrect">This field entered incorrectly</div>
-        </div>
-        <div class="more-info__form_block_right-item">
-            <input class="more-info__form_block_tel-number" name="tel_number" placeholder="Phone Number" type="text">
-            <div class="more-info__form_block_error_tel-number-unfilled">This field is required</div>
-            <div class="more-info__form_block_error_tel-number-incorrect">This field entered incorrectly</div>
-        </div>
+      <div class="more-info__form_block_left-item">
+        <input class="more-info__form_block_email" name="email" placeholder="Email" type="text">
+        <div class="more-info__form_block_error_email-unfilled">This field is required</div>
+        <div class="more-info__form_block_error_email-incorrect">This field typed incorrectly</div>
+      </div>
+      <div class="more-info__form_block_right-item">
+        <input class="more-info__form_block_tel-number" name="tel_number" placeholder="Phone Number" type="text">
+        <div class="more-info__form_block_error_tel-number-unfilled">This field is required</div>
+        <div class="more-info__form_block_error_tel-number-incorrect">This field typed incorrectly</div>
+      </div>
     </div>
     <div class="more-info__form_block">
       <input class="more-info__form_block_comment" name="comment" placeholder="Comment" type="text">
     </div>
     <div class="more-info__form_submit">
       <div class="more-info__form_submit_personal-data">
-          <div class="more-info__form_submit_personal-data_container">
-              <input class="more-info__form_submit_personal-data_container_check_input" name="submit_data"
-                     type="checkbox"><img class="more-info__form_submit_personal-data_container_check_path"
-                                          src="icons/path.svg">
-              <div class="more-info__form_submit_personal-data_container_check_box"></div>
-              <label class="more-info__form_submit_personal-data_container_text">I give consent for my personal data to
-                  be processed</label>
-          </div>
+        <div class="more-info__form_submit_personal-data_container">
+          <input class="more-info__form_submit_personal-data_container_check_input" name="submit_data"
+                 type="checkbox"><img class="more-info__form_submit_personal-data_container_check_path"
+                                      src="icons/path.svg">
+          <div class="more-info__form_submit_personal-data_container_check_box"></div>
+          <label class="more-info__form_submit_personal-data_container_text">I give consent for my personal data to be
+            processed</label>
+        </div>
       </div>
       <div class="more-info__form_submit_button-container">
         <input class="more-info__form_submit_button-container_button" type="submit" value="SEND">

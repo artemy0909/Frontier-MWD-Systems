@@ -8,6 +8,8 @@ head
     link(rel='icon' href='icons/icon.png')
     link(rel='stylesheet' href='css/style.css')
     link(rel='stylesheet' href='https://unpkg.com/swiper/css/swiper.css')
+    script(src="https://api-maps.yandex.ru/2.1/?apikey=2946900a-a1c0-45dd-b689-ba9d5c725cde&lang=ru_RU" type="text/javascript")
+    script(src="scripts/yandex_maps.js")
 header.menu
     .menu__hamburger
         .menu__hamburger_line-top
@@ -137,7 +139,8 @@ section.holding-promo
         p.holding-promo__container_num-13-text Regional Offices in Russia
 
 section.map
-    img.map__stub(src='img/map_stub.svg' alt='map_stub')
+    div#YMapsID
+    //img.map__stub(src='img/map_stub.svg' alt='map_stub')
 
 section.news
     h2.news__title Новости
@@ -168,7 +171,7 @@ section.more-info
         .more-info__form_block
             input.more-info__form_block_name(type="text" placeholder="Full name" name="full_name")
             .more-info__form_block_error_name-unfilled This field is required
-            .more-info__form_block_error_name-incorrect This field entered incorrectly
+            .more-info__form_block_error_name-incorrect This field typed incorrectly
         .more-info__form_block
             .more-info__form_block_left-item
                 input.more-info__form_block_company(type="text" placeholder="Company" name="company")
@@ -178,11 +181,11 @@ section.more-info
             .more-info__form_block_left-item
                 input.more-info__form_block_email(type="text" placeholder="Email" name="email")
                 .more-info__form_block_error_email-unfilled This field is required
-                .more-info__form_block_error_email-incorrect This field entered incorrectly
+                .more-info__form_block_error_email-incorrect This field typed incorrectly
             .more-info__form_block_right-item
                 input.more-info__form_block_tel-number(type="text" placeholder="Phone Number" name="tel_number")
                 .more-info__form_block_error_tel-number-unfilled This field is required
-                .more-info__form_block_error_tel-number-incorrect This field entered incorrectly
+                .more-info__form_block_error_tel-number-incorrect This field typed incorrectly
         .more-info__form_block
             input.more-info__form_block_comment(type="text" placeholder="Comment" name="comment")
         .more-info__form_submit
