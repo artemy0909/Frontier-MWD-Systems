@@ -39,11 +39,12 @@
   font-weight: normal;
   font-style: normal;
 }
-@keyframes header {
-  from {
+@keyframes header_animation {
+  0% {
     transform: translateY(-5rem);
   }
-  to {
+  100% {
+    opacity: 1;
     transform: translateY(0%);
   }
 }
@@ -79,11 +80,11 @@
 }
 @keyframes circle-animation {
   from {
-    visibility: visible;
+    opacity: 0.5;
     transform: scale(0);
   }
   to {
-    visibility: visible;
+    opacity: 0.5;
     transform: scale(1);
   }
 }
@@ -163,8 +164,11 @@ section, header, footer {
   flex-wrap: nowrap;
   position: absolute;
   height: 5rem;
-  animation-delay: 2s;
-  animation: header 1s;
+  opacity: 0;
+}
+.menu_animation {
+  animation: 2000ms header_animation 1500ms;
+  animation-fill-mode: forwards;
 }
 .menu__hamburger {
   display: block;
@@ -289,8 +293,9 @@ section, header, footer {
 }
 .greeting__container_text_title {
   opacity: 0;
-  animation: title_text_flowing 2s;
-  animation-delay: 1s;
+}
+.greeting__container_text_title_animation {
+  animation: 2000ms title_text_flowing 1500ms;
   animation-fill-mode: forwards;
 }
 .greeting__container_text_title_h1 {
@@ -306,13 +311,14 @@ section, header, footer {
   padding-top: 1.25rem;
   padding-left: 0.5rem;
   opacity: 0;
-  animation: title_text_flowing 2s;
-  animation-delay: 2s;
-  animation-fill-mode: forwards;
   font-weight: normal;
   font-size: 1.5625rem;
   line-height: 205%;
   color: #FFFFFF;
+}
+.greeting__container_text_description_animation {
+  animation: 2000ms title_text_flowing 2500ms;
+  animation-fill-mode: forwards;
 }
 .greeting__container_line {
   position: fixed;
@@ -351,7 +357,7 @@ section, header, footer {
   animation: lines-animation 4s;
 }
 .greeting__circles_circle-1 {
-  visibility: hidden;
+  opacity: 0;
   border: 1px solid #FFCB05;
   position: absolute;
   border-radius: 100%;
@@ -359,13 +365,13 @@ section, header, footer {
   height: 22.5rem;
   left: 1.125rem;
   top: 20rem;
-  opacity: 0.3;
-  animation: circle-animation 1s;
-  animation-delay: 1.5s;
+}
+.greeting__circles_circle-1_animation {
+  animation: 1s circle-animation 1500ms;
   animation-fill-mode: forwards;
 }
 .greeting__circles_circle-2 {
-  visibility: hidden;
+  opacity: 0;
   border: 1px solid #FFCB05;
   position: absolute;
   border-radius: 100%;
@@ -373,12 +379,13 @@ section, header, footer {
   height: 37.75rem;
   left: -6.5rem;
   top: 12.3125rem;
-  animation: circle-animation 1s;
-  animation-delay: 1s;
+}
+.greeting__circles_circle-2_animation {
+  animation: 1s circle-animation 1000ms;
   animation-fill-mode: forwards;
 }
 .greeting__circles_circle-3 {
-  visibility: hidden;
+  opacity: 0;
   border: 1px solid #FFCB05;
   position: absolute;
   border-radius: 100%;
@@ -386,12 +393,13 @@ section, header, footer {
   height: 111.625rem;
   left: -43.4375rem;
   top: -24.625rem;
-  animation: circle-animation 1s;
-  animation-delay: 0.5s;
+}
+.greeting__circles_circle-3_animation {
+  animation: 1s circle-animation 500ms;
   animation-fill-mode: forwards;
 }
 .greeting__circles_circle-4 {
-  visibility: hidden;
+  opacity: 0;
   border: 1px solid #FFCB05;
   position: absolute;
   border-radius: 100%;
@@ -399,8 +407,9 @@ section, header, footer {
   height: 148.125rem;
   left: -61.6875rem;
   top: -42.875rem;
-  opacity: 0.5;
-  animation: circle-animation 1s;
+}
+.greeting__circles_circle-4_animation {
+  animation: 1s circle-animation;
   animation-fill-mode: forwards;
 }
 

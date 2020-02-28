@@ -149,43 +149,43 @@
   </div>
 </section>
 <section class="more-info">
-  <form class="more-info__form" method="post" name="more-info_form" onsubmit="return validateForm()">
+  <form class="more-info__form" name="more-info_form" onsubmit="return validateForm()" method="post">
     <h2 class="more-info__form_title">Request More Information</h2>
     <div class="more-info__form_block">
-      <input class="more-info__form_block_name" name="full_name" placeholder="Full name" type="text">
+      <input class="more-info__form_block_name" type="text" placeholder="Full name" name="full_name">
       <div class="more-info__form_block_error_name-unfilled">This field is required</div>
       <div class="more-info__form_block_error_name-incorrect">This field typed incorrectly</div>
     </div>
     <div class="more-info__form_block">
       <div class="more-info__form_block_left-item">
-        <input class="more-info__form_block_company" name="company" placeholder="Company" type="text">
+        <input class="more-info__form_block_company" type="text" placeholder="Company" name="company">
       </div>
       <div class="more-info__form_block_right-item">
-        <input class="more-info__form_block_business-segment" name="business_segment" placeholder="Business Segment"
-               type="text">
+        <input class="more-info__form_block_business-segment" type="text" placeholder="Business Segment"
+               name="business_segment">
       </div>
     </div>
     <div class="more-info__form_block">
       <div class="more-info__form_block_left-item">
-        <input class="more-info__form_block_email" name="email" placeholder="Email" type="text">
+        <input class="more-info__form_block_email" type="text" placeholder="Email" name="email">
         <div class="more-info__form_block_error_email-unfilled">This field is required</div>
         <div class="more-info__form_block_error_email-incorrect">This field typed incorrectly</div>
       </div>
       <div class="more-info__form_block_right-item">
-        <input class="more-info__form_block_tel-number" name="tel_number" placeholder="Phone Number" type="text">
+        <input class="more-info__form_block_tel-number" type="text" placeholder="Phone Number" name="tel_number">
         <div class="more-info__form_block_error_tel-number-unfilled">This field is required</div>
         <div class="more-info__form_block_error_tel-number-incorrect">This field typed incorrectly</div>
       </div>
     </div>
     <div class="more-info__form_block">
-      <input class="more-info__form_block_comment" name="comment" placeholder="Comment" type="text">
+      <input class="more-info__form_block_comment" type="text" placeholder="Comment" name="comment">
     </div>
     <div class="more-info__form_submit">
       <div class="more-info__form_submit_personal-data">
         <div class="more-info__form_submit_personal-data_container">
-          <input class="more-info__form_submit_personal-data_container_check_input" name="submit_data"
-                 type="checkbox"><img class="more-info__form_submit_personal-data_container_check_path"
-                                      src="icons/path.svg">
+          <input class="more-info__form_submit_personal-data_container_check_input" type="checkbox"
+                 name="submit_data"><img class="more-info__form_submit_personal-data_container_check_path"
+                                         src="icons/path.svg">
           <div class="more-info__form_submit_personal-data_container_check_box"></div>
           <label class="more-info__form_submit_personal-data_container_text">I give consent for my personal data to be
             processed</label>
@@ -208,17 +208,23 @@
     </address>
     <address class="footer__item-container_address">
       <h4 class="footer__item-container_address_title">Midland</h4>
-      <p class="footer__item-container_address_text"><br>206W. New Jersey Ave.<br>Midland, TX 79701<br><br>Ph: 432.789.1080</p>
+      <p class="footer__item-container_address_text"><br>206W. New Jersey Ave.<br>Midland, TX 79701<br><br>Ph:
+        432.789.1080</p>
     </address>
     <nav class="footer__item-container_navigation">
       <div class="footer__item-container_navigation_line"></div>
-      <div class="footer__item-container_navigation_links"><a class="footer__item-container_navigation_links_link" href="#">компания</a><a class="footer__item-container_navigation_links_link" href="#">продукты и услуги</a><a class="footer__item-container_navigation_links_link" href="#">пресс центр</a><a class="footer__item-container_navigation_links_link" href="#">контакты</a></div>
+      <div class="footer__item-container_navigation_links"><a class="footer__item-container_navigation_links_link"
+                                                              href="#">компания</a><a
+              class="footer__item-container_navigation_links_link" href="#">продукты и услуги</a><a
+              class="footer__item-container_navigation_links_link" href="#">пресс центр</a><a
+              class="footer__item-container_navigation_links_link" href="#">контакты</a></div>
     </nav>
   </div>
   <p class="footer__copyright">© Frontier MWD Systems LLC. 2019</p>
   <p class="footer__design-by">Design by<a class="footer__design-by_only" href="https://onlydigital.ru/"> Only.</a></p>
 </footer>
+<script type="text/javascript" src="scripts/start_animations.js"></script>
 <script type="text/javascript" src="https://unpkg.com/swiper/js/swiper.js"></script>
 <script type="text/javascript" src="scripts/swiper_init.js"></script>
 <script type="text/javascript" src="scripts/smooth_scrolling.js"></script>
-<script src="scripts/form_verification.js" type="text/javascript"></script>
+<script type="text/javascript" src="scripts/form_verification.js"></script>

@@ -51,11 +51,12 @@ $error_color: #FF0000;
 }
 
 
-@keyframes header {
-  from {
+@keyframes header_animation {
+  0% {
     transform: translateY(-5rem);
   }
-  to {
+  100% {
+    opacity: 1;
     transform: translateY(0%);
   }
 }
@@ -95,11 +96,11 @@ $error_color: #FF0000;
 
 @keyframes circle-animation {
   from {
-    visibility: visible;
+    opacity: 0.5;
     transform: scale(0);
   }
   to {
-    visibility: visible;
+    opacity: 0.5;
     transform: scale(1);
   }
 }
@@ -137,7 +138,7 @@ $error_color: #FF0000;
 }
 
 @mixin circle_style {
-  visibility: hidden;
+  opacity: 0;
   border: 1px solid $yellow_elements;
   position: absolute;
   border-radius: 100%;
@@ -245,8 +246,13 @@ section, header, footer {
   flex-wrap: nowrap;
   position: absolute;
   height: 5rem;
-  animation-delay: 2s;
-  animation: header 1s;
+  opacity: 0;
+
+  &_animation {
+    animation: 2000ms header_animation 1500ms;
+    animation-fill-mode: forwards;
+  }
+
 
   &__background {
 
@@ -358,9 +364,11 @@ section, header, footer {
 
       &_title {
         opacity: 0;
-        animation: title_text_flowing 2s;
-        animation-delay: 1s;
-        animation-fill-mode: forwards;
+
+        &_animation {
+          animation: 2000ms title_text_flowing 1500ms;
+          animation-fill-mode: forwards;
+        }
 
         &_h1 {
           font-weight: bold;
@@ -378,13 +386,15 @@ section, header, footer {
         padding-top: 1.25rem;
         padding-left: 0.5rem;
         opacity: 0;
-        animation: title_text_flowing 2s;
-        animation-delay: 2s;
-        animation-fill-mode: forwards;
         font-weight: normal;
         font-size: 1.5625rem;
         line-height: 205%;
         color: #FFFFFF;
+
+        &_animation {
+          animation: 2000ms title_text_flowing 2500ms;
+          animation-fill-mode: forwards;
+        }
       }
     }
 
@@ -426,10 +436,12 @@ section, header, footer {
       height: 22.5rem;
       left: 1.125rem;
       top: 20.0rem;
-      opacity: 0.3;
-      animation: circle-animation 1s;
-      animation-delay: 1.5s;
-      animation-fill-mode: forwards;
+
+      &_animation {
+        animation: 1s circle-animation 1500ms;
+        animation-fill-mode: forwards;
+      }
+
     }
 
     &_circle-2 {
@@ -438,9 +450,12 @@ section, header, footer {
       height: 37.75rem;
       left: -6.5rem;
       top: 12.3125rem;
-      animation: circle-animation 1s;
-      animation-delay: 1s;
-      animation-fill-mode: forwards;
+
+      &_animation {
+        animation: 1s circle-animation 1000ms;
+        animation-fill-mode: forwards;
+      }
+
     }
 
     &_circle-3 {
@@ -449,9 +464,12 @@ section, header, footer {
       height: 111.625rem;
       left: -43.4375rem;
       top: -24.625rem;
-      animation: circle-animation 1s;
-      animation-delay: 0.5s;
-      animation-fill-mode: forwards;
+
+      &_animation {
+        animation: 1s circle-animation 500ms;
+        animation-fill-mode: forwards;
+      }
+
     }
 
     &_circle-4 {
@@ -460,9 +478,12 @@ section, header, footer {
       height: 148.125rem;
       left: -61.6875rem;
       top: -42.875rem;
-      opacity: 0.5;
-      animation: circle-animation 1s;
-      animation-fill-mode: forwards;
+
+      &_animation {
+        animation: 1s circle-animation;
+        animation-fill-mode: forwards;
+      }
+
     }
   }
 
